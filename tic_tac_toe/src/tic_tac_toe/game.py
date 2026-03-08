@@ -112,3 +112,16 @@ class Game:
 
         #Store winner state
         self.winner = None
+
+    # ----------------------------------------
+    # Convert a move from 0-8 into row/column
+    # ----------------------------------------
+    def convert_move(self, move):
+
+        #Integer division gives row
+        row = move // 3
+
+        #Modulo gives column
+        col = move % 3
+
+        return row, col
