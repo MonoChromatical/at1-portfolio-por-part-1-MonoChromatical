@@ -126,3 +126,37 @@ class Game:
         col = move % 3
 
         return row, col
+
+    # ----------------------------------------
+    # Make a move in the game
+    # ----------------------------------------
+    def make_move(self, move):
+
+        #Convernt the move number into board coordinates
+        row, col = self.convert_move(move)
+
+        #attempt to place the mark on the board
+        success = self.board.place(row, col, self.current_player)
+
+        #if placement failed (space taken)
+        if not success:
+            return False
+
+        #Check if the move created a winner
+        winner = self.board.check_winner()
+
+        if winner:
+            self.winner = winner
+            return True
+
+        #Check for tie
+        if self.board.is_full():
+            return True
+
+        #Switch player turn
+        if self.current_player =="X":
+            self.current_player = "O"
+        else:
+            self.current_player = "X"
+
+        return True
