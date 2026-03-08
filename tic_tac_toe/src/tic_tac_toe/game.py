@@ -96,6 +96,9 @@ class Board:
         #If no empty cells remain
         return True
 
+    def get_board(self):
+        return self.board
+
 # ----------------------------------------
 # Game Class
 # ----------------------------------------
