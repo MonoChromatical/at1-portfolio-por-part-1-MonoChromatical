@@ -19,12 +19,12 @@ setup(
     ],
 
     # Metadata for your project
-    author="Your Name",
-    author_email="your-email@example.com",
+    author="Cameron Hendrikse",
+    author_email="20152311@tafe.wa.edu.au",
     description="A refactored version of a Tic Tac Toe game",
     license="MIT",
     keywords="tic-tac-toe refactoring",
-    url="http://github.com/your_username/tic-tac-toe",  # project home page
+    url="https://github.com/MonoChromatical/at1-portfolio-por-part-1-MonoChromatical",  # project home page
 )
 
 # With this setup.py in place, you can install your project in another environment with pip:
