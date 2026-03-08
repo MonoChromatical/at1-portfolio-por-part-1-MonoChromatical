@@ -77,6 +77,7 @@ class Board:
 
         #Check opposite diagonal
         if self.board[0][2] == self.board[1][1] == self.board [2][0] != self.empty:
+            return self.board[0][2]
 
         #If nobody has won
         return None
