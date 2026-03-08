@@ -1,4 +1,4 @@
-'''A monolithic and poorly written tic-tac-toe for you to refactor.'''
+                                '''A monolithic and poorly written tic-tac-toe for you to refactor.'''
 # Game state
 p1 = "X"
 p2 = "O"
