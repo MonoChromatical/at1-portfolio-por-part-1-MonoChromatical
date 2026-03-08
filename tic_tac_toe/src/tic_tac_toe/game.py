@@ -80,3 +80,17 @@ class Board:
 
         #If nobody has won
         return None
+
+    # ----------------------------------------
+    # Check if the board is full (tie condition)
+    # ----------------------------------------
+    def is_full(self):
+
+        #Loop through every row and cell
+        for row in self.board:
+            for cell in row:
+                if cell == self.empty:
+                    return False
+
+        #If no empty cells remain
+        return True
