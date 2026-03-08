@@ -94,3 +94,21 @@ class Board:
 
         #If no empty cells remain
         return True
+
+# ----------------------------------------
+# Game Class
+# ----------------------------------------
+
+class Game:
+
+    #Constructor
+    def __init__(self):
+
+        #Create a board object
+        self.board = Board()
+
+        #X always starts firstt
+        self.current_player = "X"
+
+        #Store winner state
+        self.winner = None
