@@ -37,3 +37,20 @@ class Board:
         #return True, otherwise return false
         return self.board[row][col] == self.empty
 
+    # ----------------------------------------
+    # Place a mark on the board
+    # ----------------------------------------
+    # mark will be either "X" or "O"
+    def place(self,row, col, mark):
+
+        #checks if the cell is empty
+        if self.is_empty(row, col):
+
+            #Place the players mark
+            self.board[row][col] = mark
+
+            #Return True to indicate the move was successful
+            return True
+
+    #If the square was already full
+        return False
