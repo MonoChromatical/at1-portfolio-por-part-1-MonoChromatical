@@ -54,3 +54,29 @@ class Board:
 
     #If the square was already full
         return False
+
+    # ----------------------------------------
+    # Check if a player has won
+    # ----------------------------------------
+    def check_winner(self):
+
+        #Check rows
+        for row in self.board:
+            if row[0] == row[1] == row[2] != self.empty:
+                return row[0]
+
+        #Check columns
+        for col in range(3):
+            if self.board[0][col] == self.board[1][col] == self.board[2][col] != self.empty:
+                return self.board[0][0]
+
+        #Check main diagonal
+        if self.board[0][0] == self.board[1][1] == self.board[2][2] != self.empty:
+            return self.board[0][0]
+
+
+        #Check opposite diagonal
+        if self.board[0][2] == self.board[1][1] == self.board [2][0] != self.empty:
+
+        #If nobody has won
+        return None
