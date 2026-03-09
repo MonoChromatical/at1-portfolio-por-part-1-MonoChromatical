@@ -57,11 +57,15 @@ def main():
                 print("It's a tie!")
                 break
 
-
-        replay = input ("Do you want to play again (y/n)? ").lower()
-
-        if replay != "y":
-            break
+        while True:
+            replay = input("Do you want to play again? (y/n): ").lower()
+            if replay == "y":
+                break
+            elif replay == "n":
+                print("Thank you for playing.")
+                return
+            else:
+                print("Please enter y or n.")
 
 if __name__ == "__main__":
     main()
