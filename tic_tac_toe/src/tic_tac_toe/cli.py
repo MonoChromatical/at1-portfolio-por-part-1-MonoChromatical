@@ -19,43 +19,49 @@ def print_board(board):
 def main():
     """Main gameplay loop."""
 
-    game = Game()
-
     while True:
-        print_board(game.get_board())
+        game = Game()
 
-        # Calculate the highest valid move based on board size
-        max_move = game.board.size * game.board.size - 1
+        while True:
+            print_board(game.board.get_board())
 
-        # Ask the user for input and make sure it is a number
-        try:
-            move = int(input(f"Enter your move (0 - {max_move}): "))
-        except ValueError:
-            print("Please enter a number.")
-            continue
 
-        # Check that the move is within the valid range
-        if move < 0 or move > max_move:
-            print(f"Move must be between 0 and {max_move}.")
-            continue
+            max_move = 8
 
-        # Try to make the move
-        if not game.make_move(move):
-            print("Invalid move. That space is already taken.")
-            continue
+            # Ask the user for input and make sure it is a number
+            try:
+                move = int(input(f"Enter your move (0 - {max_move}): "))
+            except ValueError:
+                print("Please enter a number.")
+                continue
 
-        # Check for a winner
-        if game.winner:
-            print_board(game.get_board())
-            print("Player", game.winner, "wins!")
+            # Check that the move is within the valid range
+            if move < 0 or move > max_move:
+                print(f"Move must be between 0 and {max_move}.")
+                continue
+
+            # Try to make the move
+            if not game.make_move(move):
+                print("Invalid move. That space is already taken.")
+                continue
+
+            #Check for a winner
+            if game.winner:
+                print_board(game.board.get_board())
+                print("Player", game.winner, "wins!")
+                break
+
+            # Check for a tie
+            if game.board.is_full():
+                print_board(game.board.get_board())
+                print("It's a tie!")
+                break
+
+
+        replay = input ("Do you want to play again (y/n)? ").lower()
+
+        if replay != "y":
             break
-
-        # Check for a tie
-        if game.board.is_full():
-            print_board(game.get_board())
-            print("It's a tie!")
-            break
-
 
 if __name__ == "__main__":
     main()
